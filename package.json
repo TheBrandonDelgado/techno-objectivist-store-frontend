@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@medusajs/medusa-js": "^6.1.9",
+    "@next/font": "^14.2.15",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "medusa-react": "^9.0.18",
     "next": "14.2.13",
