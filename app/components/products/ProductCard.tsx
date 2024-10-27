@@ -1,10 +1,9 @@
 import Link from "next/link";
 
-const Product = ({ product }: any) => {
+const ProductCard = ({ product }: any) => {
     return (
       <Link key={product.id} href={`/products/${product.handle}`} className="group">
-        <div className="h-64 w-full overflow-hidden rounded-lg 
-          xl:aspect-h-8 xl:aspect-w-7">
+        <div className="w-full overflow-hidden rounded-lg">
           <img
             // alt={product.imageAlt}
             src={product.images?.[0]?.url}
@@ -20,4 +19,4 @@ const Product = ({ product }: any) => {
     );
 }
 
-export default Product;
+export default ProductCard;

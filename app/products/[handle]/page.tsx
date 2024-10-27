@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import medusaClient from '../../lib/medusa-client';
+import ProductOptions from '../../components/products/ProductOptions';
 
 export default async function ProductPage({ params }: { params: { handle: string } }) {
   const { handle } = params;
@@ -29,7 +30,7 @@ export default async function ProductPage({ params }: { params: { handle: string
           <h2 className="text-3xl font-bold mb-4">{product.title}</h2>
           <p className="text-xl mb-4">${product.variants[0].prices[0].amount / 100}</p>
           <p className="mb-4">{product.description}</p>
-          {/* Add to cart button and other product details here */}
+          <ProductOptions product={product} />
         </div>
       </div>
     </div>
