@@ -60,6 +60,7 @@ module.exports = {
       },
       fontFamily: {
         sans: [
+          "Futura",
           "Inter",
           "-apple-system",
           "BlinkMacSystemFont",
