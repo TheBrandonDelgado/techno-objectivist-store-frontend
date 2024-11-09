@@ -4,6 +4,7 @@ import FeaturedProducts from "@modules/home/components/featured-products"
 import Hero from "@modules/home/components/hero"
 import { getCollectionsWithProducts } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
+import { revalidateTag } from "next/cache"
 
 export const metadata: Metadata = {
   title: "Medusa Next.js Starter Template",
@@ -18,6 +19,8 @@ export default async function Home({
 }) {
   const collections = await getCollectionsWithProducts(countryCode)
   const region = await getRegion(countryCode)
+  revalidateTag("products")
+  console.log(collections)
 
   if (!collections || !region) {
     return null
