@@ -113,10 +113,19 @@ export default function ProductActions({
           {(product.variants?.length ?? 0) > 1 && (
             <div className="flex flex-col gap-y-4">
               {(product.options || []).map((option) => {
+                const uniqueValues = new Set(
+                  product.variants
+                    ?.map((v) => v.options?.find((o) => o.option_id === option.id)?.value)
+                    .filter((value): value is string => Boolean(value))
+                )
+
                 return (
                   <div key={option.id}>
                     <OptionSelect
-                      option={option}
+                      option={{
+                        ...option,
+                        values: Array.from(uniqueValues).map((v) => ({ id: v, value: v })),
+                      }}
                       current={options[option.id]}
                       updateOption={setOptionValue}
                       title={option.title ?? ""}

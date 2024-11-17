@@ -3,7 +3,7 @@ import { Heading } from "@medusajs/ui"
 const Hero = () => {
   return (
     <div className="h-[75vh] w-full border-b border-ui-border-base relative">
-      <video src={'https://video.twimg.com/ext_tw_video/1846477146602029056/pu/vid/avc1/1280x720/u8777CpwcF3GBhSA.mp4?tag=12'} autoPlay muted loop className="absolute inset-0 object-cover w-full h-full" />
+      <video src={'/videos/hero.mp4'} autoPlay muted loop playsInline className="absolute inset-0 object-cover w-full h-full" />
       <div className="absolute inset-0 bg-black/40 z-[5]" /> {/* Dark overlay */}
       <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6">
         <span>
@@ -20,6 +20,13 @@ const Hero = () => {
             Clothing for the driven, the daring, <br />and the builders of tomorrow
           </Heading>
         </span>
+      </div>
+      <div className="absolute bottom-0 left-0 p-1 text-xs text-ui-fg-subtle z-10 bg-black/40 backdrop-blur-sm text-white rounded">
+        <p className="flex gap-2">Video Credit: <a href="https://x.com/mitch_7w">@mitch_7w</a> 
+          <a href="https://x.com/radshaan">@radshaan</a> 
+          <a href="https://x.com/var_epsilon">@var_epsilon</a> 
+          <a href="https://x.com/levelsio">@levelsio</a>
+        </p>
       </div>
     </div>
   )
