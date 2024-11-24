@@ -1,6 +1,6 @@
 const Header = () => {
     return (
-        <header className='grid place-items-center grid-cols-3'>
+        <header className='grid place-items-center grid-cols-3 border-b-2 border-gray-200 py-4 mb-4'>
             <div className='col-span-1 flex justify-start w-full'>
               <button className='text-left ml-4'>
                 <svg 
